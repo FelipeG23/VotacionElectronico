@@ -54,7 +54,6 @@
         <servlet-name>VotantesService</servlet-name>
         <url-pattern>/VotantesService</url-pattern>
     </servlet-mapping>
-
     <session-config>
         <session-timeout>
             30
