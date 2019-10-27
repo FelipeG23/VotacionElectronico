@@ -10,7 +10,7 @@ import CandidateAdmin from "../../modules/Administration/CandidateAdmin/Candidat
 import ElectionAdmin from "../../modules/Administration/ElectionAdmin/ElectionAdmin";
 
 // Higer Order Components
-import ErrorHandler from "../../shared/hoc/ErrorHandler/ErrorHandler";
+import ToastHandler from "../../shared/hoc/ToastHandler/ToastHandler";
 
 // Estilos
 import "./MainContainer.scss";
@@ -23,7 +23,7 @@ import { Switch, Route } from "react-router-dom";
 
 const MainContainer = () => {
   return (
-    <ErrorHandler>
+    <ToastHandler>
       <div className="MainContainer__container">
         <Header />
         <div className="MainContainer__component-container">
@@ -78,7 +78,7 @@ const MainContainer = () => {
           </Switch>
         </div>
       </div>
-    </ErrorHandler>
+    </ToastHandler>
   );
 };
 

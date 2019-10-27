@@ -15,6 +15,9 @@
     "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "css-loader": "2.1.1",
+    "devextreme": "19.1-stable",
+    "devextreme-react": "19.1-stable",
+    "devextreme-themebuilder": "19.1-stable",
     "dotenv": "6.2.0",
     "dotenv-expand": "5.1.0",
     "eslint": "^6.1.0",
@@ -49,6 +52,7 @@
     "react-dom": "^16.11.0",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
+    "react-toastify": "^5.4.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "resolve": "1.12.0",
@@ -62,10 +66,7 @@
     "webpack": "4.41.0",
     "webpack-dev-server": "3.2.1",
     "webpack-manifest-plugin": "2.1.1",
-    "workbox-webpack-plugin": "4.3.1",
-    "devextreme": "19.1-stable",
-    "devextreme-themebuilder": "19.1-stable",
-    "devextreme-react": "19.1-stable"
+    "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
     "start": "node scripts/start.js",
