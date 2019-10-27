@@ -1,0 +1,23 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow&display=swap');
+
+h1, h2, h3, h4, h5{
+  font-family: 'PT Sans', sans-serif;
+}
+
+p, small, li, label, a{
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+h1, h2, h3, h4, h5, p{
+  margin-bottom: 0 !important;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
