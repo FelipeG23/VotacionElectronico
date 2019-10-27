@@ -5,6 +5,8 @@
  */
 package Entities;
 
+import java.sql.Date;
+
 /**
  *
  * @author Felipe
@@ -13,6 +15,8 @@ public class CampanaEntity {
 
     private Integer idCampana;
     private String nombreCampana;
+    private Date fechaInicio;
+    private Date fechaFin;
 
     public Integer getIdCampana() {
         return idCampana;
@@ -28,6 +32,22 @@ public class CampanaEntity {
 
     public void setNombreCampana(String nombreCampana) {
         this.nombreCampana = nombreCampana;
+    }
+
+    public Date getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(Date fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public Date getFechaFin() {
+        return fechaFin;
+    }
+
+    public void setFechaFin(Date fechaFin) {
+        this.fechaFin = fechaFin;
     }
 
 }
