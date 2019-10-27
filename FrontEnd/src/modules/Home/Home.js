@@ -11,7 +11,7 @@ const Home = () => {
                 <li><Link to="/candidateAdmin">candidateAdmin</Link></li>
                 <li><Link to="/electionAdmin">electionAdmin</Link></li>
                 <li><Link to="/electionResults">electionResults</Link></li>
-                <li><Link to="/idSignIn">idSignIn</Link></li>
+                <li><Link to="/idLogin">idSignIn</Link></li>
             </ul>
         </div>
     )

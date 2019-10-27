@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import ComponentContainer from "../../shared/components/ComponentContainer/ComponentContainer";
 import Home from "../../modules/Home/Home";
 import NotFound from "../../shared/components/404NotFound/NotFound";
-import IdSignIn from "../../modules/Authentification/IdSignIn/IdSignIn";
+import IdLogin from "../../modules/Authentification/IdLogin/IdLogin";
 import CandidateElection from "../../modules/Vote/CandidateElection/CandidateElection";
 import ElectionResults from "../../modules/Vote/ElectionResults/ElectionResults";
 import CandidateAdmin from "../../modules/Administration/CandidateAdmin/CandidateAdmin";
@@ -62,11 +62,11 @@ const MainContainer = () => {
             )}
           />
           <Route
-            path="/idSignIn"
+            path="/idLogin"
             exact
             render={() => (
               <ComponentContainer title="Login Votante" isVotingProcess>
-                <IdSignIn />
+                <IdLogin />
               </ComponentContainer>
             )}
           />
