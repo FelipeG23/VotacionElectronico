@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Home = () => {
     return (
         <div>
-            <h1>Home</h1>
+            <h1>Enrutamiento temporal</h1>
             <ul>
                 <li><Link to="/candidateElection">candidateElection</Link></li>
                 <li><Link to="/candidateAdmin">candidateAdmin</Link></li>

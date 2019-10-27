@@ -2,13 +2,13 @@
 import './CandidateElection.scss'
 
 // React
-import React from "react";
+import React, { Fragment } from "react";
 
 const CandidateElection = () => {
   return (
-    <div>
+    <Fragment>
       <h1>Candidate Election</h1>
-    </div>
+    </Fragment>
   );
 };
 

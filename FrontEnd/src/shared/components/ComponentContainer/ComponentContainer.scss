@@ -10,18 +10,21 @@
   display: grid;
   grid-template-rows: 2.5em calc(100% - 2.5em);
   overflow: hidden;
+  border: 1px solid $main-border-color;
+  box-shadow: 6px 5px 9px rgba(0, 0, 0, 0.3),
+    3px -4px 5px rgba(0, 0, 0, 0.1) inset, -6px 4px 7px rgba(0, 0, 0, 0.3);
 }
 
 .ComponentContainer__title {
   padding: 0.5em;
-  border-bottom: 1px solid $secondary-text-color;
+  border-bottom: 1px solid $main-border-color;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
 }
 
-.ComponentContainer__component{
-    padding: 0.5em;
-    overflow-y: auto;
-    overflow-x: hidden;
+.ComponentContainer__component {
+  padding: 0.5em;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

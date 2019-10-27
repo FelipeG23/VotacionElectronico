@@ -1,11 +1,11 @@
 // React
-import React from 'react'
+import React, { Fragment } from 'react'
 
 const ElectionResults = () => {
     return (
-        <div>
+        <Fragment>
             <h1>ElectionResults</h1>
-        </div>
+        </Fragment>
     )
 }
 
