@@ -12,20 +12,43 @@ import Form, {
 import "./IdLogin.scss";
 
 // React
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Redux
 import { connect } from "react-redux";
-import { setWarningToast } from "../../../store/actions/UIActions";
+import { setErrorToast } from "../../../store/actions/UIActions";
+
+// Servicios
+import { validateVoter, getAllVoters } from "../../../shared/services/VoteServices";
 
 const logo = "/assets/images/loginLogo.png";
 
-const IdLogin = ({ setWarningToast }) => {
+const IdLogin = ({ setErrorToast }) => {
   const [voterDataState] = useState({ id: null });
 
-  const handleVoterLogin = e => {
+  useEffect(() => {
+    getAllVotersOnLoad()
+  }, [])
+
+  const getAllVotersOnLoad = async () => {
+    await getAllVoters().then(response => {
+      console.log(response)
+    }).catch(error => {
+      setErrorToast(error.toString())
+      console.error(error.toString)
+    })
+  }
+
+  const handleVoterLogin = async e => {
     e.preventDefault();
-    setWarningToast("Aún no se ha consumido el servicio");
+    await validateVoter(voterDataState.id)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        setErrorToast(error.toString())
+        console.error(error);
+      });
   };
 
   return (
@@ -65,5 +88,5 @@ const IdLogin = ({ setWarningToast }) => {
 
 export default connect(
   null,
-  { setWarningToast }
+  { setErrorToast }
 )(IdLogin);
