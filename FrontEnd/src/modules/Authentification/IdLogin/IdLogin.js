@@ -14,14 +14,18 @@ import "./IdLogin.scss";
 // React
 import React, { useState } from "react";
 
+// Redux
+import { connect } from 'react-redux'
+import  { setError } from '../../../store/actions/UIActions'
+
 const logo = "/assets/images/loginLogo.png";
 
-const IdLogin = () => {
+const IdLogin = ({setError}) => {
   const [voterDataState] = useState({ id: null });
 
   const handleVoterLogin = e => {
     e.preventDefault();
-    console.log(voterDataState);
+    setError('Error en servicio')
   };
 
   return (
@@ -59,4 +63,4 @@ const IdLogin = () => {
   );
 };
 
-export default IdLogin;
+export default connect(null, { setError })(IdLogin);

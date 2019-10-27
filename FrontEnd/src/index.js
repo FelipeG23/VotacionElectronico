@@ -12,9 +12,11 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import thunk from "redux-thunk";
 import VoteReducer from './store/reducers/VoteReducer'
+import UIReducer from './store/reducers/UIReducer'
 
 const rootReducer = combineReducers({
   voteReducer: VoteReducer,
+  uiReducer: UIReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
