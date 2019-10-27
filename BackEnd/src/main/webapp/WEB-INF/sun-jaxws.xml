@@ -2,4 +2,5 @@
 <endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
   <endpoint implementation="Servicios.VotantesService" name="VotantesService" url-pattern="/VotantesService"/>
   <endpoint implementation="Servicios.CandidatosService" name="CandidatosServiceService" url-pattern="/CandidatosServiceService"/>
+  <endpoint implementation="Servicios.CampanasService" name="CampanasServiceService" url-pattern="/CampanasServiceService"/>
 </endpoints>
