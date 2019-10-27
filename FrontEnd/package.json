@@ -62,7 +62,10 @@
     "webpack": "4.41.0",
     "webpack-dev-server": "3.2.1",
     "webpack-manifest-plugin": "2.1.1",
-    "workbox-webpack-plugin": "4.3.1"
+    "workbox-webpack-plugin": "4.3.1",
+    "devextreme": "19.1-stable",
+    "devextreme-themebuilder": "19.1-stable",
+    "devextreme-react": "19.1-stable"
   },
   "scripts": {
     "start": "node scripts/start.js",
