@@ -5,6 +5,9 @@ import Entities.CampanaEntity;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -53,4 +56,45 @@ public class CampanaDAO {
         return campana;
     }
 
+    public List<CampanaEntity> consultarCampanas() {
+        Connection conn = null;
+        StringBuilder sql = new StringBuilder();
+        Statement stm = null;
+        ResultSet rs = null;
+
+        List<CampanaEntity> campanas = new ArrayList<>();
+        try {
+            conn = Conexion.GetConnection();
+
+            sql.append(" SELECT ");
+            sql.append(" ID_CAMPANA, NOMBRE_CAMPANA, FECHA_INICIO, FECHA_FIN ");
+            sql.append(" FROM CAMPANA ");
+
+            stm = conn.createStatement();
+
+            rs = stm.executeQuery(sql.toString());
+
+            while (rs.next()) {
+                CampanaEntity aux = new CampanaEntity();
+
+                aux.setIdCampana(rs.getInt("ID_CAMPANA"));
+                aux.setNombreCampana(rs.getString("NOMBRE_CAMPANA"));
+                aux.setFechaInicio(rs.getDate("FECHA_INICIO"));
+                aux.setFechaFin(rs.getDate("FECHA_FIN"));
+
+                campanas.add(aux);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return campanas;
+    }
 }
