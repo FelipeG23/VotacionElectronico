@@ -1,7 +1,8 @@
 @import "../../../styles/global.scss";
 
 .ComponentContainer__container {
-  width: 100%;
+  max-width: 100%;
+  min-width: 25em;
   background: $secondary-background-color;
   color: $secondary-text-color;
   border-radius: 0.3em;
