@@ -1,0 +1,27 @@
+@import "../../../styles/global.scss";
+
+.ComponentContainer__container {
+  width: 100%;
+  background: $secondary-background-color;
+  color: $secondary-text-color;
+  border-radius: 0.3em;
+  min-height: calc(100% - 11em);
+  max-height: calc(100% - 1em);
+  display: grid;
+  grid-template-rows: 2.5em calc(100% - 2.5em);
+  overflow: hidden;
+}
+
+.ComponentContainer__title {
+  padding: 0.5em;
+  border-bottom: 1px solid $secondary-text-color;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.ComponentContainer__component{
+    padding: 0.5em;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

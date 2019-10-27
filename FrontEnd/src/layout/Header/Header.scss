@@ -1,0 +1,12 @@
+.Header__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5em;
+}
+
+.Header__voter-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

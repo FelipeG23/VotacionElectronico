@@ -8,9 +8,11 @@ package DAO;
 import Conexion.Conexion;
 import Entities.AplicacionEntity;
 import Entities.VotantesEntity;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,5 +59,55 @@ public class VotantesDAO {
             }
         }
         return lista;
+    }
+
+    public String validarVotante(String cedula) {
+        Connection conn = null;
+        String rta = "";
+        try {
+            conn = Conexion.GetConnection();
+            CallableStatement cStmt = conn.prepareCall("{call PR_VALIDA_VOTANTE(?,?)}");
+            cStmt.setString(1, cedula);
+            cStmt.registerOutParameter(2, Types.VARCHAR);
+            cStmt.execute();
+            rta = cStmt.getString(2);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return rta;
+    }
+    
+    public String guardarVoto(String cedula,String idCandidato,String idPuesto) {
+        Connection conn = null;
+        String rta = "";
+        try {
+            conn = Conexion.GetConnection();
+            CallableStatement cStmt = conn.prepareCall("{call PR_GUARDAR_VOTO(?,?,?,?)}");
+            cStmt.setString(1, cedula);
+            cStmt.setString(2, idPuesto);
+            cStmt.setString(3, idCandidato);
+            cStmt.registerOutParameter(4, Types.VARCHAR);
+            cStmt.execute();
+            rta = cStmt.getString(4);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(conn != null){
+                    conn.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return rta;
     }
 }

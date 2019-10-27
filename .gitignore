@@ -9,3 +9,4 @@ web/WEB-INF/jax-ws-catalog.xml
 *.wsdl
 *.war
 /BackEnd/target/
+~$ListadoServicios.xlsx

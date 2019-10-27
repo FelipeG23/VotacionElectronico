@@ -1,0 +1,27 @@
+@import "../../styles/global.scss";
+
+#root,
+.App,
+.MainContainer__container {
+  height: 100%;
+}
+
+.MainContainer__container {
+  display: grid;
+  grid-template-rows: 8% 92%;
+}
+
+.MainContainer__container,
+.MainContainer__component-container {
+  background: $main-background-color;
+  color: $main-text-color;
+}
+
+.MainContainer__component-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
