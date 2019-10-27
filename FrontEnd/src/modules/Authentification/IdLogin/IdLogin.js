@@ -16,16 +16,16 @@ import React, { useState } from "react";
 
 // Redux
 import { connect } from "react-redux";
-import { setErrorToast } from "../../../store/actions/UIActions";
+import { setWarningToast } from "../../../store/actions/UIActions";
 
 const logo = "/assets/images/loginLogo.png";
 
-const IdLogin = ({ setErrorToast }) => {
+const IdLogin = ({ setWarningToast }) => {
   const [voterDataState] = useState({ id: null });
 
   const handleVoterLogin = e => {
     e.preventDefault();
-    setErrorToast("Error en el servicio");
+    setWarningToast("Aún no se ha consumido el servicio");
   };
 
   return (
@@ -65,5 +65,5 @@ const IdLogin = ({ setErrorToast }) => {
 
 export default connect(
   null,
-  { setErrorToast }
+  { setWarningToast }
 )(IdLogin);
