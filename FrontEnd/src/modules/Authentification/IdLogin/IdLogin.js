@@ -28,6 +28,7 @@ const IdLogin = ({ setErrorToast }) => {
 
   useEffect(() => {
     getAllVotersOnLoad()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const getAllVotersOnLoad = async () => {

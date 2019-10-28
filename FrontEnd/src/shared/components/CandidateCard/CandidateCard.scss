@@ -1,0 +1,34 @@
+@import "../../../styles/global.scss";
+
+.CandidateCard__container {
+  height: auto;
+  overflow: hidden;
+  border: 1px solid $main-border-color;
+  border-radius: 0.3em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.CandidateCard__container:hover {
+  box-shadow: 6px 5px 9px rgba(0, 0, 0, 0.3),
+    3px -4px 5px rgba(0, 0, 0, 0.1) inset, -6px 4px 7px rgba(0, 0, 0, 0.3);
+}
+
+.CandidateCard__title {
+  text-align: center;
+}
+
+.CandidateCard__photo {
+  width: 100%;
+  height: 9em;
+  background-repeat: no-repeat;
+  background-size: 150% 100%;
+  background-position: center;
+}
+
+.CandidateCard__party{
+  height: 4em;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}

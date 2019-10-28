@@ -1,14 +1,25 @@
+// Componentes Propios
+import CardLayout from "../../../shared/components/CardLayout/CardLayout";
+import CandidateCard from "../../../shared/components/CandidateCard/CandidateCard";
+
 // Estilos
-import './CandidateElection.scss'
+import "./CandidateElection.scss";
+
+// Mockups
+import { candidates } from "../../../mockups/CandidatesMockup";
 
 // React
-import React, { Fragment } from "react";
+import React from "react";
 
 const CandidateElection = () => {
   return (
-    <Fragment>
-      <h1>Candidate Election</h1>
-    </Fragment>
+    <div className="CandidateElection__container">
+      <CardLayout>
+        {candidates.map(candidate => (
+          <CandidateCard key={candidate.id} candidate={candidate} />
+        ))}
+      </CardLayout>
+    </div>
   );
 };
 
