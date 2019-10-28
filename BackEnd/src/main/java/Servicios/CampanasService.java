@@ -7,7 +7,9 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.jws.WebService;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -39,5 +41,21 @@ public class CampanasService {
             objJson = DeserializaObjeto.creaObjetoJson("ERROR", "NO SE ENCONTRARON RESULTADOS");
         }
         return objJson;
+    }
+
+    @POST
+    @Path("establecerCalendario/")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String establecerCalendario(
+            @PathParam("id-campana") int idCamapna,
+            @PathParam("nombre-campana") String nombreCampana,
+            @PathParam("year-inicio") int yeatInicio,
+            @PathParam("month-inicio") int monthInicio,
+            @PathParam("day-inicio") int dayInicio,
+            @PathParam("year-fin") int yearFin,
+            @PathParam("month-fin") int monthFin,
+            @PathParam("day-fin") int dayFin
+    ) {
+        return null;
     }
 }

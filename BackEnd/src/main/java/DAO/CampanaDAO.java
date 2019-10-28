@@ -3,6 +3,7 @@ package DAO;
 import Conexion.Conexion;
 import Entities.CampanaEntity;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -14,6 +15,42 @@ import java.util.List;
  * @author santi
  */
 public class CampanaDAO {
+
+    public boolean establecerCalendario(int idCampana, String nombreCampana, int yearInicio, int monthInicio, int dayInicio, int yearFin, int monthFin, int dayFin) {
+        Date fechaInicio = new Date(yearInicio, monthInicio, dayInicio);
+        Date fechaFin = new Date(yearFin, monthFin, dayFin);
+        Connection conn = null;
+        StringBuilder sql = new StringBuilder();
+        PreparedStatement ps = null;
+
+        try {
+            conn = Conexion.GetConnection();
+            sql.append(" INSERT INTO CAMPANA ");
+            sql.append(" (ID_CAMPANA, NOMBRE_CAMPANA, FECHA_INICIO, FECHA_FIN) ");
+            sql.append(" VALUES(?,?,?,?) ");
+
+            ps = conn.prepareStatement(sql.toString());
+            ps.setInt(1, idCampana);
+            ps.setString(2, nombreCampana);
+            ps.setDate(3, fechaInicio);
+            ps.setDate(4, fechaFin);
+
+            return ps.execute();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                return false;
+            }
+        }
+    }
 
     public CampanaEntity consultarCampana(int idCampana) {
         Connection conn = null;
