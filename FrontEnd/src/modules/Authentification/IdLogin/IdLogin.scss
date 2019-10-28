@@ -1,0 +1,19 @@
+.IdLogin__container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.IdLogin__logo {
+  width: 15em;
+  img {
+    width: 100%;
+  }
+}
+
+.IdLogin__form {
+  width: 13em;
+}

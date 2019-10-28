@@ -1,0 +1,8 @@
+.CardLayout__container {
+    transition: transform 1.2s;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+    grid-gap: 1em;
+    width: 100%;
+    min-width: 40em;
+}

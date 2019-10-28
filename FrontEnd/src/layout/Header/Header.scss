@@ -5,6 +5,17 @@
     padding: 0 0.5em;
 }
 
+.Header__page-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img{
+        width: 4.4em;
+        margin-right: 0.4em;
+    }
+}
+
 .Header__voter-info{
     display: flex;
     flex-direction: column;
