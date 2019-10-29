@@ -52,4 +52,22 @@ public class CandidatosService {
 
         return objJson;
     }
+    
+    @GET
+    @Path("consultarCandidato/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public  String consultarCandidato(@PathParam("id") Integer id) {
+        String objJson = "";
+        CandidatosDAO candidatoDAO = new CandidatosDAO();
+        CandidatoEntity candidato = candidatoDAO.consultarCandidato(id);
+        
+        if(candidato != null){//CORREGIR, NO ESTA CUMPLIENDO ESTA VALIDACIÓN
+            objJson = DeserializaObjeto.creaObjetoJson("OK", candidato);
+        } else {
+            objJson = DeserializaObjeto.creaObjetoJson("ERROR", "No se encontro el candidato");
+        }
+                
+
+        return objJson;
+    }
 }

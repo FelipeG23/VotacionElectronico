@@ -7,6 +7,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,14 +17,17 @@ import java.util.List;
  */
 public class CampanaDAO {
 
-    public boolean establecerCalendario(int idCampana, String nombreCampana, int yearInicio, int monthInicio, int dayInicio, int yearFin, int monthFin, int dayFin) {
-        Date fechaInicio = new Date(yearInicio, monthInicio, dayInicio);
-        Date fechaFin = new Date(yearFin, monthFin, dayFin);
+    public boolean crearCampana(int idCampana, String nombreCampana, Date fechaInicio, Date fechaFin) {
         Connection conn = null;
         StringBuilder sql = new StringBuilder();
         PreparedStatement ps = null;
 
         try {
+//            java.util.Date dateInicio = new SimpleDateFormat("mmm dd, yyy").parse(fechaInicio);
+//            java.sql.Date sqlDateInicio = new java.sql.Date(dateInicio.getTime());
+//            java.util.Date dateFin = new SimpleDateFormat("mmm dd, yyy").parse(fechaFin);
+//            java.sql.Date sqlDateFin = new java.sql.Date(dateFin.getTime());
+
             conn = Conexion.GetConnection();
             sql.append(" INSERT INTO CAMPANA ");
             sql.append(" (ID_CAMPANA, NOMBRE_CAMPANA, FECHA_INICIO, FECHA_FIN) ");

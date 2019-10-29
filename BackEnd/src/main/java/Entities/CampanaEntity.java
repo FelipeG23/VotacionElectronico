@@ -18,6 +18,9 @@ public class CampanaEntity {
     private Date fechaInicio;
     private Date fechaFin;
 
+    public CampanaEntity() {
+    }
+
     public Integer getIdCampana() {
         return idCampana;
     }
