@@ -17,17 +17,12 @@ import java.util.List;
  */
 public class CampanaDAO {
 
-    public boolean crearCampana(int idCampana, String nombreCampana, Date fechaInicio, Date fechaFin) {
+    public Boolean crearCampana(int idCampana, String nombreCampana, Date fechaInicio, Date fechaFin) {
         Connection conn = null;
         StringBuilder sql = new StringBuilder();
         PreparedStatement ps = null;
 
         try {
-//            java.util.Date dateInicio = new SimpleDateFormat("mmm dd, yyy").parse(fechaInicio);
-//            java.sql.Date sqlDateInicio = new java.sql.Date(dateInicio.getTime());
-//            java.util.Date dateFin = new SimpleDateFormat("mmm dd, yyy").parse(fechaFin);
-//            java.sql.Date sqlDateFin = new java.sql.Date(dateFin.getTime());
-
             conn = Conexion.GetConnection();
             sql.append(" INSERT INTO CAMPANA ");
             sql.append(" (ID_CAMPANA, NOMBRE_CAMPANA, FECHA_INICIO, FECHA_FIN) ");
@@ -40,7 +35,6 @@ public class CampanaDAO {
             ps.setDate(4, fechaFin);
 
             return ps.execute();
-
         } catch (Exception e) {
             e.printStackTrace();
             return false;

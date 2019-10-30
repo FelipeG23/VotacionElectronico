@@ -108,4 +108,39 @@ public class CandidatosDAO {
             return candidato;
         }
     }
+
+    public Boolean insertarCandidato(Integer idCandidato, String nombreCandidato, Integer idCampana) {
+        Connection conn = null;
+        StringBuilder sql = new StringBuilder();
+        PreparedStatement ps = null;
+        boolean resultado = false;
+        try {
+            conn = Conexion.GetConnection();
+            sql.append(" INSERT INTO CANDIDATO ");
+            sql.append(" (ID_CANDIDATO, NOMBRE_CANDIDATO, ID_CAMPANA) ");
+            sql.append(" VALUES(?,?,?) ");
+
+            ps = conn.prepareStatement(sql.toString());
+            ps.setInt(1, idCandidato);
+            ps.setString(2, nombreCandidato);
+            ps.setInt(3, idCampana);
+
+            
+            if(ps.executeUpdate() > 1) {
+                resultado = true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return resultado;
+    }
 }
